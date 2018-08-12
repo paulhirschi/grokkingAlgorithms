@@ -1,12 +1,12 @@
 /** 
-def binarySearch: List[Int] => Int => Option[(Int, Int)]
--- Tail recursive function to perform a binary search on a List[Int]
+ * def binarySearch: List[Int] => Int => Option[(Int, Int)]
+ * -- Tail recursive function to perform a binary search on a List[Int]
 
-def maxNumberSteps: Long => (Double, Int)
--- function evaluates to the maximum number of steps it would take to find the
--- index of an item in a List of length (n)
+ * def maxNumberSteps: Int => (Double, Int)
+ * -- function evaluates to the maximum number of steps it would take to find the
+ * -- index of an item in a List of length (n: Int)
 
-TODO: Make the function polymorphic
+ * TODO: Make the function polymorphic
  */
 
 val theList: List[Int] = (1 to 100).toList
@@ -32,7 +32,7 @@ def binarySearch(list: List[Int])(target: Int): Option[(Int, Int)] = {
 }
 
 // Binary Search is O(log n)
-def maxNumberSteps(n: Long): (Double, Int) = {
+def maxNumberSteps(n: Int): (Double, Int) = {
   import scala.math.{log10, ceil}
   val log2 = (x: Double) => log10(x)/log10(2.0)
   (log2(n), ceil(log2(n)).toInt)

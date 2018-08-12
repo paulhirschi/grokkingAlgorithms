@@ -15,6 +15,7 @@ val theList: List[Int] = (1 to 100).toList
 def binarySearch(list: List[Int])(target: Int): Option[(Int, Int)] = {
 
   // binary search only works on a sorted sequence
+  // I know using a Range to create the List will already be sorted
   val sortedList = list.sorted
 
   @annotation.tailrec
@@ -37,11 +38,12 @@ def maxNumberSteps(n: Long): (Double, Int) = {
   (log2(n), ceil(log2(n)).toInt)
 }
 
-val search = binarySearch(theList)(_)
+val find = binarySearch(theList)(_)
 
-println(search(50)) // should take 1 step to find
-println(search(25)) // should take 2 steps to find
-println(search(75)) // should take 2 steps to find
-println(search(12)) // should take 3 steps to find
-println(search(88)) // should take 3 steps to find
+println(find(50)) // should take 1 step to find
+println(find(25)) // should take 2 steps to find
+println(find(75)) // should take 2 steps to find
+println(find(12)) // should take 3 steps to find
+println(find(88)) // should take 3 steps to find
+println(find(101)) // should be None
 println(maxNumberSteps(theList.length)) // should be 7 max steps to find index of value

@@ -1,5 +1,6 @@
 /** 
- * def binarySearch: List[Int] => Int => Option[(Int, Int)]
+
+ * def binarySearch: Seq[Int] => Int => Option[(Int, Int)]
  * -- Tail recursive function to perform a binary search on a List[Int]
 
  * def maxNumberSteps: Int => (Double, Int)
@@ -9,13 +10,13 @@
  * TODO: Make the function polymorphic
  */
 
-val theList: List[Int] = (1 to 100).toList
+val theList: Seq[Int] = (1 to 100).toSeq
 
 // Evaluates to (indexOfTarget: Int, numberStepsToFind: Int)
-def binarySearch(list: List[Int])(target: Int): Option[(Int, Int)] = {
+def binarySearch(list: Seq[Int])(target: Int): Option[(Int, Int)] = {
 
   // binary search only works on a sorted sequence
-  // I know using a Range to create the List will already be sorted
+  // I know using a Range to create the Vector will already be sorted
   val sortedList = list.sorted
 
   @annotation.tailrec
